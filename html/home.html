@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="./assets/css/menuOptions.css">
+    <link rel="stylesheet" href="./assets/css/table.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul>
+                <li class="menuItem" data-value="home">HOME</li>
+                <li class="menuItem" data-value="settings">CONFIGURAÇÕES</li>
+                <li class="menuItem" data-value="users">USUÁRIOS</li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <div class="name"></div>
+            <img src="./assets/img/default.png" alt="Foto de perfil" id="photo-perfil">
+            <div class="change-photo">
+                <span class="alt-photo">Alterar foto</span>
+                <span class="exit">Sair</span>
+            </div>
+        </div>
+    </header>
+    <div class="box-photo">
+        <label for="input-file">Escolha uma foto</label>
+        <input type="file" id="input-file" accept="image/*">
+        <div class="box-button-photo">
+            <button class="btn-save-photo">Salvar</button>
+            <button class="btn-cancel-photo">Cancelar</button>
+        </div>
+    </div>
+    <main class="main-container">
+        <div class="box-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>CATEGORIA</th>
+                        <th>QUANTIDADE</th>
+                        <th>DATA DE CADASTRO</th>
+                        <th>OPÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody class="body-table">
+                    <tr>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <div class="button-box">
+        <button>Adiconar Produto</button>
+    </div>
+    <div class="container-add-edit">
+        <div class="box-add-edit">
+            <div class="header-add-edit">
+                <span>Cadastro</span>
+            </div>
+            <form>
+                <label for="input-name">Nome</label>
+                <input type="text" id="input-name">
+
+                <label for="input-amount">Quantidade inicial</label>
+                <input type="number" id="input-amount">
+                
+                <label for="input-category">Categoria</label>
+                <select id="input-category">
+                    <option disabled selected label ="Selecione"></option>
+                </select>
+
+                <label for="input-unit">Unidade de medida</label>
+                <select id="input-unit">
+                    <option selected disabled label="Selecione"></option>
+                </select>
+                
+                <div class="box-button">
+                    <button type="button" class="btn-insert">Cadastrar</button>
+                    <button type="button" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./assets/js/axuiFunc.js"></script>
+    <script src="./assets/js/menuNav.js"></script>
+    <script src="./assets/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+.main-container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-title{
+    display: flex;
+    gap: 100px;
+}
+.list-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 100%;
+    gap: 100px;
+}
+.box-config{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    width: 30vw;
+    background: rgb(162, 162, 235);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+    animation-name: box-animation;
+    animation-duration: 300ms;
+    transform: scale(0.1);
+    animation-fill-mode: forwards;
+    padding: 20px;
+}
+@keyframes box-animation {
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.category li, .unit li{
+    list-style-type: none;
+    font-family: "Oswald",sans-serif;
+    cursor: pointer;
+    text-align: center;
+}
+.category li:hover, .unit li:hover{
+    background: rgb(165, 165, 165);
+}
+.category, .unit{
+    height: 150px;
+    width: 30%;
+    padding: 10px;
+    background: white;
+    overflow-y: scroll;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+    text-align: center;
+    font-family: "Oswald",sans-serif;
+}
+.category::-webkit-scrollbar, .unit::-webkit-scrollbar{
+    display: none;
+}
+.box-buttons{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 190px;
+}
+.box-buttons button{
+    padding: 10px;
+    border: none;
+    background: rgb(200, 200, 250);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 300ms;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+}
+.box-buttons button:hover{
+    box-shadow: 2px 2px 2px black;
+    transform: translate(-2px,-2px);
+}
+
+.box-add-cat, .box-add-uni{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    gap: 20px;
+    background: rgb(162, 162, 235);
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 3px black;
+    font-family: "Oswald", sans-serif;
+    transform: scale(0.1);
+    animation-name: boxAdd-animation;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+@keyframes boxAdd-animation {
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.box-add-cat input, .box-add-uni input{
+    height: 25px;
+    border: none;
+    border-radius: 15px;
+    padding: 0 10px;
+}
+.box-add-cat input:focus, .box-add-uni input:focus{
+    outline: none;
+}
+.box-buttons{
+    display: flex;
+    justify-content: center;
+}
+.box-add-cat .box-buttons button, .box-add-uni .box-buttons button{
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    background: rgb(129, 129, 243);
+    transition: all 300ms;
+    cursor: pointer;
+    text-align: center;
+}
+.box-add-cat button:hover, .box-add-uni button:hover{
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 2px 2px black;
+}
+.box-add-uni{
+    display: none;
+}

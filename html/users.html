@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="./assets/css/users.css">
+    <link rel="stylesheet" href="./assets/css/table.css">
+    <link rel="stylesheet" href="./assets/css/menuOptions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul>
+                <li class="menuItem" data-value="home">HOME</li>
+                <li class="menuItem" data-value="settings">CONFIGURAÇÕES</li>
+                <li class="menuItem" data-value="users">USUÁRIOS</li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <div class="name">Kevin</div>
+            <img src="./assets/img/default.png" alt="Foto de perfil" id="photo-perfil">
+            <div class="change-photo">
+                <span class="alt-photo">Alterar foto</span>
+                <span class="exit">Sair</span>
+            </div>
+        </div>
+    </header>
+    <div class="box-photo">
+        <label for="input-file">Escolha uma foto</label>
+        <input type="file" id="input-file" accept="image/*">
+        <div class="box-button-photo">
+            <button class="btn-save-photo">Salvar</button>
+            <button class="btn-cancel-photo">Cancelar</button>
+        </div>
+    </div>
+    <main class="main-container">
+        <div class="box-users">
+            <div class="table-users">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Foto</th>
+                            <th>Nome</th>
+                            <th>Nível</th>
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <div class="box-button">
+        <button>Cadastrar novo usuário</button>
+    </div>
+    <main class="main-insert">
+        <div class="box-insert">
+            <div class="title-insert">
+                <span>Cadastro de usuário</span>
+            </div>
+            <div class="input-item">
+                <label for="name-input">Nome:</label>
+                <input type="text" id="name-input">
+            </div>
+            <div class="input-item">
+                <label for="password-input">Senha:</label>
+                <input type="password" id="password-input">
+            </div>
+            <div class="input-item" id="level-input-box">
+                <label for="level-input">Nível:</label>
+                <select id="level-input">
+                    <option selected label="Selecione o nível" disabled></option>
+                    <option value="1" label="1"></option>
+                    <option value="2" label="2"></option>
+                </select>
+            </div>
+            <div class="input-item">
+                <label for="check-input">O usuário deve alterar a senha:</label>
+                <input type="checkbox" id="check-input">
+            </div>
+            <div class="input-item">
+                <button class="insert-user" value="Cadastrar">Cadastrar</button>
+                <button class="cancel-user">Cancelar</button>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/axuiFunc.js"></script>
+    <script src="./assets/js/menuNav.js"></script>
+    <script src="./assets/js/users.js"></script>
+</body>
+</html>

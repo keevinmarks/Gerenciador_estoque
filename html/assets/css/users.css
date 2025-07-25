@@ -1,0 +1,135 @@
+.main-container{
+    margin: 25px;
+    display: flex;
+    justify-content: center;
+    min-height: 70vh;
+    background: rgb(215, 215, 230);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 2px black;
+    transform: scale(0.1);
+    animation-name: animation-main;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+@keyframes animation-main {
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.box-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-button button{
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    background: rgb(138, 138, 226);
+    font-family: "Oswald",sans-serif;
+    color: white;
+    transition: all 300ms;
+    cursor: pointer;
+    font-size: 20px;
+}
+.box-button button:hover{
+    box-shadow: 2px 2px 2px black;
+    transform: translate(-2px,-2px);
+}
+.btn-edit, .btn-del{
+    background:rgb(163, 163, 255) ;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-family: "Oswald",sans-serif;
+    cursor: pointer;
+    transition: all 300ms;
+}
+.btn-edit:hover, .btn-del:Hover{
+    background:rgb(135, 135, 179);
+}
+.main-insert{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 20px;
+    background: rgb(215, 215, 230);
+    border-radius: 20px;
+    padding: 20px;
+    animation-name: animation-insertBox;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+@keyframes animation-insertBox {
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.box-insert{
+    background: rgb(161, 108, 231);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-family: "Oswald", sans-serif;
+    border-radius: 20px;
+    height: 70%;
+}
+.box-insert input{
+    height: 25px;
+    padding-left: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+}
+.box-insert #check-input{
+    box-shadow: none;
+    height: 20px;
+    width: 20px;
+}
+.box-insert button{
+    height: 25px;
+    padding: 5px;
+    background: rgb(130, 157, 231);
+    border-radius: 20px;
+    border: none;
+    font-family: "Oswald",sans-serif;
+    font-size: 20px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+.box-insert button:hover{
+    box-shadow: 2px 2px 2px black;
+    transform: translate(-2px, -2px);
+}
+.box-insert input:focus{
+    outline: none;
+}
+.box-insert select{
+    height: 25px;
+    border-radius: 20px;
+}
+.input-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.title-insert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(130, 157, 231);
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 20px;
+}

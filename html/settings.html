@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="./assets/css/menuOptions.css">
+    <link rel="stylesheet" href="./assets/css/settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul>
+                <li class="menuItem" data-value="home">HOME</li>
+                <li class="menuItem" data-value="settings">CONFIGURAÇÕES</li>
+                <li class="menuItem" data-value="users">USUÁRIOS</li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <div class="name">Kevin</div>
+            <img src="./assets/img/default.png" alt="Foto de perfil" id="photo-perfil">
+            <div class="change-photo">
+                <span class="alt-photo">Alterar foto</span>
+                <span class="exit">Sair</span>
+            </div>
+        </div>
+    </header>
+    <div class="box-photo">
+        <label for="input-file">Escolha uma foto</label>
+        <input type="file" id="input-file" accept="image/*">
+        <div class="box-button-photo">
+            <button class="btn-save-photo">Salvar</button>
+            <button class="btn-cancel-photo">Cancelar</button>
+        </div>
+    </div>
+    <main class="main-container">
+        <div class="box-config">
+            <div class="list-items">
+                <div class="category">
+                    <h1>Categoria</h1>
+                    <ul></ul>
+                </div>
+                <div class="unit">
+                    <h1>Unidade</h1>
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="box-buttons">
+                <button id="btn-category">Adicionar Categoria</button>
+                <button id="btn-unity">Adicionar Unidade</button>
+            </div>
+        </div>
+        <div class="box-add-cat">
+            <h1>Adicionar categoria</h1>
+            <input type="text" placeholder="Nome da categoria" class="input-cat">
+            <div class="box-buttons">
+                <button class="btn-save-cat">Salvar</button>
+                <button class="btn-cancel-cat">Cancalar</button>
+            </div>
+            
+        </div>
+        <div class="box-add-uni">
+            <h1>Aidicionar Unidade de Medida</h1>
+            <input type="text" placeholder="Nome da unidade" class="input-uni">
+            <div class="box-buttons">
+                <button class="btn-save-uni">Salvar</button>
+                <button class="btn-cancel-uni">Cancelar</button>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/axuiFunc.js"></script>
+    <script src="./assets/js/settings.js"></script>
+    <script src="./assets/js/menuNav.js"></script>
+</body>
+</html>

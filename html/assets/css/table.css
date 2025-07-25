@@ -1,0 +1,37 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+}
+thead{
+    border-collapse: collapse;
+}
+.main-table{
+    width: 100%;
+}
+
+td,th{
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    padding: 12px 100px;
+}
+tbody tr{
+    transition: all 300ms;
+}
+tbody tr:hover{
+    background: white;
+}
+th{
+    background: rgb(96, 177, 253);
+}
+th:first-child{
+    border-radius: 20px 0 0 0;
+}
+th:last-child{
+    border-radius: 0 20px 0 0;
+}
+table tbody img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div>LOGIN</div>
+    </header>
+    <main class="main-container">
+        <p>Seja bem vindo</p>
+        <div class="box-login">
+            <div class="name-input">
+                <img src="./assets/img/user_icon.png" alt="Icone de usuário">
+                <input type="text" placeholder="Usuário" id="name-input">
+            </div>
+            <div class="password-input">
+                <img src="./assets/img/pw_icon.png" alt="Icone de senha">
+                <input type="password" placeholder="Senha" id="password-input">
+            </div>
+            <div class="buttons">
+                <button id="btnEntry">Entrar</button>
+                <button id="btnBack">Voltar</button>
+            </div>
+        </div>
+    </main>
+    <div class="box-Alt-Pass">
+        <h1>Alterar senha</h1>
+        <div class="alt-pw">
+            <input type="password" id="alt-pw" placeholder=" Nova senha">
+        </div>
+        <div class="confirm">
+            <input type="password" id="confirm-pw" placeholder=" Confirme sua senha">
+        </div>
+        <div class="btn">
+            <button id="btn-confirm">Salve</button>
+        </div>
+    </div>
+    <script src="./assets/js/axuiFunc.js"></script>
+    <script src="./assets/js/login.js"></script>
+</body>
+</html>

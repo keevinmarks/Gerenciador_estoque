@@ -1,0 +1,151 @@
+body{overflow-y: hidden;}
+.main-container{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    background: rgb(215, 215, 230);
+    margin: 15px 15px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px rgb(131, 131, 131);
+    padding: 10px;
+    overflow-y: scroll;
+    transform: scale(0.01);
+    animation-name: table-animation;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+@keyframes table-animation {
+    0%{
+        transform: scale(0.01);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.button-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    margin: 60px 0;
+}
+.button-box button{
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    width: 230px;
+    height: 50px;
+    border: none;
+    background: rgb(138, 138, 226);
+    border-radius: 20px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+.button-box button:hover{
+    background: rgb(146, 166, 255);
+    box-shadow: 2px 2px 2px black;
+    transform: translate(-2px, -2px);
+}
+/* Estiliza a barra de rolagem completa */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.btn-edit, .btn-delete{
+    border: none;
+    background: rgb(163, 163, 255);
+    padding: 7px;
+    border-radius: 15px;
+    font-family: "Oswald", sans-serif ;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btn-edit:hover, .btn-delete:hover{
+    background: rgb(192, 192, 255);
+}
+.header-add-edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    font-family: "Osawld",sans-serif;
+    padding-top: 5px;
+    background: lightblue;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 35px;
+}
+.container-add-edit{
+    height: 80vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.box-add-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65%;
+    width: 300px;
+    background:  rgb(161, 108, 231);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+}
+.box-add-edit form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: "Oswald",sans-serif;
+    font-size: 30px;
+}
+.box-add-edit form input{
+    width: 60%;
+    height: 25px;
+    padding: 0 5px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 2px 2px 2px black;
+}
+.box-add-edit form input:focus{
+    outline: none;
+    background: lightblue;
+}
+.box-add-edit form select{
+    padding: 5px;
+    background: lightblue;
+    border: none;
+    border-radius: 20px;
+    width: 60%;
+    box-shadow: 2px 2px 2px black;
+}
+.box-button{
+    padding: 10px;
+}
+.box-button button{
+    padding: 10px;
+    border:none;
+    border-radius: 20px;
+    font-family: "Oswald", sans-serif;
+    font-size: 15px;
+    background: rgb(200, 200, 250);
+    transition: all 300ms;
+    cursor: pointer;
+}
+.box-button button:hover{
+    box-shadow: 2px 2px 2px black;
+    transform: translate(-2px, -2px);
+}
