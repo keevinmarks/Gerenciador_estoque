@@ -1,3 +1,4 @@
+//Evento para renderizar todos os usuários na tabela:
 document.addEventListener("DOMContentLoaded", function(){
     AuxiFunc.getUsers();
 });
@@ -14,6 +15,8 @@ let btnRegister = document.querySelector(".insert-user");
 
 //Função para o botão de abrir tela de registro:
 btnBoxRegister.addEventListener("click", function(){
+
+    //Verificando de o usuário atual tem permissão para fazer isso:
     if(Number(sessionStorage.getItem("level")) === 2){
         mainConatiner.style.display = "none";
         boxButton.style.display = "none";
@@ -27,8 +30,10 @@ btnBoxRegister.addEventListener("click", function(){
     
 });
 
-//Função para cadastrar usuário:
+//Função para cadastrar ou atualizar um usuário:
 btnRegister.addEventListener("click", async function(){
+
+    //Pegando os dados necessários:
     let name = document.getElementById("name-input").value;
     let password = document.getElementById("password-input").value;
     let level = document.getElementById("level-input").value;
@@ -38,11 +43,17 @@ btnRegister.addEventListener("click", async function(){
     }else{
         reset = 0;
     }
+
+    //Verificando se não há campos vazios:
     if(name === "" || password === "" || level === "" || reset === ""){
         alert("Preencha todos os campos");
         return;
     }
+
+    //Montando um objeto com as informações do usuário:
     let user = {name, password, level, reset};
+
+    //Verificando se é um novo usuário ou se é a atualização de um existente:
     if(this.value === "Cadastrar"){      
         await AuxiFunc.insertUser(user);
         window.location.reload();       
@@ -52,6 +63,7 @@ btnRegister.addEventListener("click", async function(){
         window.location.reload();
     }
 
+    //Limpandos todos os inputs:
     document.querySelectorAll("input").forEach(input=> input.value = "");
     document.getElementById("level-input").selectedIndex = 0;
     
@@ -63,6 +75,7 @@ btnCancel.addEventListener("click", function(){
     mainConatiner.style.display = "flex";
     boxButton.style.display = "flex";
 
+    //Limpando todos os inputs:
     document.querySelectorAll("input").forEach(input=> input.value = "");
     document.getElementById("level-input").selectedIndex = 0;
 });

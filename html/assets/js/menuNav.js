@@ -1,3 +1,4 @@
+//Selecionando os elementos necessários:
 let menuItem = document.querySelectorAll(".menuItem");
 let perfil_photo = document.querySelector(".user-info img");
 let menu = document.querySelector(".change-photo");
@@ -8,11 +9,14 @@ let altPhoto = document.querySelector(".alt-photo");
 let btnCancelPhoto = document.querySelector(".btn-cancel-photo");
 let btnSavePhoto = document.querySelector(".btn-save-photo");
 
+//Colocando um evento de click em cada item do menu e direcionando para a sua página:
 menuItem.forEach(function(menu){
     menu.addEventListener("click", function(){
        window.location.href = `${menu.dataset.value}.html`;
     })
 });
+
+//Evento para abrir menu de alterar foto ou sair do usuário:
 perfil_photo.addEventListener("click", function(){
     
     if(menu.style.display === "flex"){
@@ -31,7 +35,11 @@ perfil_photo.addEventListener("click", function(){
 //Função para salvar foto do usuário:
 btnSavePhoto.addEventListener("click", async function(){
     const formData = new FormData();
+
+    //Verificando de se há arquivos no input:
     if(document.getElementById("input-file").files.length > 0){
+
+        //Adicionando informações ao FormData:
         formData.append("photo", document.getElementById("input-file").files[0]);
         formData.append("id", sessionStorage.getItem("id"));
 
@@ -42,7 +50,7 @@ btnSavePhoto.addEventListener("click", async function(){
         alert("Nenhuma foto selecionada");
     }
 });
-//Função para fechar a janela de alterar foto
+//Função para fechar a janela de alterar foto:
 btnCancelPhoto.addEventListener("click", function(){
     document.querySelector(".box-photo").style.display = "none";
 });
@@ -57,13 +65,14 @@ exit.addEventListener("click", function(){
     window.location.href = "index.html";
 });
 
-//Função para mostrar o nome do usuário atula quando o documento carregar:
+//Função para mostrar o nome do usuário atual quando o documento carregar:
 document.addEventListener("DOMContentLoaded", function(){
     let name_user = sessionStorage.getItem("name");
     let path_photo = sessionStorage.getItem("path_photo");
     let name_box = document.querySelector(".name");
     let imgPerfil = document.getElementById("photo-perfil");
-    console.log(path_photo);
+    
+    //Atualizando foto de perfil e nome do usuário, todo vez que a tela carrega:
     imgPerfil.src = path_photo;
     name_box.innerHTML = `${name_user}`;
     

@@ -12,6 +12,7 @@ $database = "product_manager";
 
 $connection = new mysqli($server, $username, $password, $database);
 
+//Verificando se a conexão com o banco foi estabelecida:
 if($connection->connect_error){
     die ("Erro na conexão");
 }

@@ -5,10 +5,11 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=UTF-8");
 header('Content-Type: application/json');
 
-require_once "conexao.php";
+require_once "connection.php";
 
 $data = json_decode(file_get_contents("php://input"),true);
 
+//Verificando se a conexão com o banco foi estabelecida:
 if($connection->connect_error){
     echo json_encode(["success" => false, "message" => "Não foi possível se conectar com o banco"]);
     exit();

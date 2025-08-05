@@ -6,18 +6,20 @@ header("Content-Type: application/json; charset=UTF-8");
 header('Content-Type: application/json');
 
 
-require_once "conexao.php";
+require_once "connection.php";
 
+//Verificando se a conexão com o banco foi estabelecida:
 if($connection->connect_error){
     echo json_encode(["succes" => false, "message" => "Deu erro na conexão"]);
     exit();
 }
 
-
-
+//Pegando o método da requisição:
 $method = $_SERVER["REQUEST_METHOD"];
 
 if($method === "GET"){
+
+    //Montando uma query com base na instrução:
     $instruction = $_GET["instruction"];
     if($instruction === "getUnit" || $instruction === "fillHomeUnit"){
         $comand = $connection->prepare("SELECT * FROM unit");
@@ -30,8 +32,11 @@ if($method === "GET"){
         exit();
     }
 
+    //Armazenando o resultado da query em um array:
     $arrayResult = [];
     $resultQuery = $comand->get_result();
+
+    //Verificando se o resultado tem conteúdo:
     if($resultQuery->num_rows > 0){
         while($row = $resultQuery->fetch_assoc()){
             $arrayResult[] = $row;
@@ -52,13 +57,17 @@ if($method === "GET"){
 
 }else if($method === "DELETE"){
     
+    //Pegando dados do obejto enviado:
     $data = json_decode(file_get_contents("php://input"),true);
     $instruction = $data["instruction"];
-
     $id = $data["id"] ?? "";
+
+    //Verificando de se o id existe:
     if(empty($id)){
         echo json_encode(["success" => false, "message"=> "O id está vazio"]);
     }
+
+    //Executando query de delete com base no id e a instrução:
     if($instruction === "delUnit"){
         $comand = $connection->prepare("DELETE FROM unit WHERE id = ?");
         $comand->bind_param("i", $id);

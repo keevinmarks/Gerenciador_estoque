@@ -5,8 +5,9 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=UTF-8");
 header('Content-Type: application/json');
 
-require_once "conexao.php";
+require_once "connection.php";
 
+//Verificando se a conexão com o banco foi estabelecida:
 if($connection->connect_error){
     echo json_encode(["success" => false, "message" => "A conexão falhou"]);
     exit();
