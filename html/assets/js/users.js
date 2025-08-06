@@ -59,7 +59,7 @@ btnRegister.addEventListener("click", async function(){
         window.location.reload();       
     }else if(this.value === "Salvar"){
         user.id = Number(sessionStorage.getItem("idUser"));
-        await AuxiFunc.insertUser(user);
+        await AuxiFunc.updateUser(user);
         window.location.reload();
     }
 

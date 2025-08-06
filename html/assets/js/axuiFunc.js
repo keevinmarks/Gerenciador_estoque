@@ -134,7 +134,7 @@ class AuxiFunc{
             //Pegando resposta em json:
             const json = await resp.json();
 
-            console.log(json.message);
+            alert(json.message);
         }catch(error){  
             console.log(`Deu o seguinte erro: ${error}`)
         }

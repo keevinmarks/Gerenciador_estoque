@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=UTF-8");
 header('Content-Type: application/json');
 
-
+//Requerendo o arquivo de conexão:
 require_once "connection.php";
 
 //Verificando se a conexão com o banco foi estabelecida:
@@ -17,6 +17,7 @@ if($connection->connect_error){
 //Pegando o método da requisição:
 $method = $_SERVER["REQUEST_METHOD"];
 
+//Condicional para o método GET:
 if($method === "GET"){
 
     //Montando uma query com base na instrução:
@@ -54,7 +55,7 @@ if($method === "GET"){
         exit();
     }
     
-
+//Condicional para o método DELETE:
 }else if($method === "DELETE"){
     
     //Pegando dados do obejto enviado:
@@ -86,11 +87,16 @@ if($method === "GET"){
             echo json_encode(["success"=> false, "message"=> "Erro no comando mysql"]);
         }
     }
+
+//Condicional para o método POST:   
 }else if($method === "POST"){
+
+    //Pegando os dados necessários:
     $data = json_decode(file_get_contents("php://input"),true);
     $name = $data["name"];
     $table = $data["table"];
 
+    //Fazendo uma verificação de segurança para permitir somentes essas tabelas:
     $allowedTables = ["unit", "category"];
 
     if(!(in_array($table, $allowedTables))){
@@ -98,9 +104,11 @@ if($method === "GET"){
         exit();
     }
 
+    //Montando o comando de insert:
     $comand = $connection->prepare("INSERT INTO `$table` (name) VALUES (?)");
     $comand->bind_param("s", $name);
 
+    //Executando o comando:
     if($comand->execute()){
         echo json_encode(["success"=> true, "message" => "Salvo com sucesso"]);
     }
